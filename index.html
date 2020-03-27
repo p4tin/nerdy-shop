@@ -7,24 +7,20 @@
     <title>Vue default bundle example</title>
   </head>
   <body>
-    <!-- You can use custom layout. This is just for the example -->
     <div style="max-width: 1902px; margin: 0 auto; padding: 0 20px;">
       <header style="margin: 50px 0; display: flex; justify-content: center;">
-        <!-- #apicart-cart-dropdown is the target element for the Cart dropdown component. You can move it wherever you want -->
         <div id="apicart-cart-dropdown"></div>
       </header>
       <main>
-        <!-- #apicart is the target for the application -->
         <div id="apicart"></div>
       </main>
     </div>
-    <script src="https://cdn.jsdelivr.net/gh/apicart/packages-js@master/packages/vue-components/dist/bundles/default/default.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/apicart/packages-js@1.0.0-alpha3/packages/vue-components/dist/bundles/default/default.full.min.js"></script>
     <script>
       Apicart
         .setDevEnv()
         .configure({
-          // Replace tokens with your PUBLIC tokens from the administration
-          store: new Apicart.Store({ token: "9mCu3DlBCa4REI?Q7kKly!Rw6!_FvD8K_dgPXe1b20?r6!sPTQMyCpq_ADt!jXOD" }),
+          store: new Apicart.Store({ token: '9mCu3DlBCa4REI?Q7kKly!Rw6!_FvD8K_dgPXe1b20?r6!sPTQMyCpq_ADt!jXOD' }),
           payments: new Apicart.Payments({ token: 'Q84lNQyLl?nBGvKxxbcdc!nWFKEZrK?L_Is2r9IaOJo14ONbXw1SMlPIeptcaFza' }),
           vueComponentsTranslator: {
             currencyFormats: {
@@ -33,18 +29,48 @@
                   currency: 'USD'
                 }
               }
+            },
+            localization: {
+              en: {
+                categories: {
+                  clothes: {
+                    title: 'The most beautiful clothes',
+                    description: "The most beautiful t-shirts.",
+                    menu: 'T-shirts',
+                    new: {
+                      title: 'New collection',
+                      description: "T-shirts from our new collection.",
+                      menu: 'New collection'
+                    },
+                    discount: {
+                      title: 'Discounted t-shirts',
+                      description: "The most popular T-shirts for half price",
+                      menu: 'Discount'
+                    }
+                  }
+                }
+              }
             }
           },
           vueComponents: {
             category: {
               products: {
-                list: [
-                  // Replace tokens with your PUBLIC tokens from the administration
-                  "https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/04/4.json",
-                  "https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/03/3.json",
-                  "https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/02/2.json",
-                  "https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/01/1.json"
-                ]
+                list: {
+                  clothes: {
+                    new: [
+                      'https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/01/1.json',
+                      'https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/02/2.json',
+                      'https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/03/3.json',
+                      'https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/04/4.json',
+                    ],
+                    discount: [
+                      'https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/04/4.json',
+                      'https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/03/3.json',
+                      'https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/02/2.json',
+                      'https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/01/1.json',
+                    ]
+                  }
+                }
               }
             }
           }
