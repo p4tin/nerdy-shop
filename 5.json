@@ -1,0 +1,13 @@
+{
+"id": "11",
+"name": "Men's cheaper green t-shirt",
+"price": 15,
+"taxRate": 7,
+"description": null,
+"availability": "Available",
+"images": {
+"primary": {
+"url": "https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/images/01/1-1580765787-28.png"
+}
+}
+}
